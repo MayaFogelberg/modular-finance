@@ -19,11 +19,14 @@
   }
 
 .button {
-    background-color: black;
+    background-color: rgb(19, 98, 148);
     color: white;
     font-size: 14px;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
     cursor: pointer;
+    margin-left: -5px;
+    /* font-weight: 600; */
 }

@@ -1,32 +1,31 @@
-
-const RadioButtons = ( {categorie, setCategorie} ) => {
+const RadioButtons = ( {category, setCategory} ) => {
     const handleIR = () => {
-      setCategorie('IR');
+      setCategory('ir');
     };
 
     const handlePR = () => {
-        setCategorie('PR');
+        setCategory('pr');
       };
 
     const handleBoth = () => {
-        setCategorie('Both');
+        setCategory('Both');
     };
 
     return(
         <div>
             <RadioButton
                 label="IR"
-                value={categorie=== 'IR'}
+                value={category=== 'ir'}
                 onChange={handleIR}
             />
             <RadioButton
                 label="PR"
-                value={categorie=== 'PR'}
+                value={category=== 'pr'}
                 onChange={handlePR}
                 />
             <RadioButton
                 label="Both"
-                value={categorie=== 'Both'}
+                value={category=== 'Both'}
                 onChange={handleBoth}
             />
         </div>

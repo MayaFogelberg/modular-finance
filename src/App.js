@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import NewsItems from './newsitems/NewsItems';
 import Radiobuttons from './filter/Radiobuttons';
-import Checkbuttons from '.filter/Checkbuttons';
+import Checkbuttons from './filter/Checkbuttons';
 
 
 
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [categorie, setCategorie] = useState('Both');
-  const [report, setReport] = useState('');
+  const [category, setCategory] = useState('Both');
+  const [reportStates, setReportStates] = useState([]);
+
+  
 
 
   useEffect(() => {
@@ -25,19 +27,44 @@ function App() {
  }, []);
  
  const filteredPosts = posts.filter((post) => {
-  if (categorie == "both") {
-    return true
+  if (category === "Both") {
+    return posts
   }
-  return post.category == item.properties.type
+  return category === post.properties.type 
+
  })
+ .filter((post) => {
+  if(reportStates.includes("Regulatory"))
+  {
+    return post.properties.tags.includes(":regulatory")
+ }
+ if(reportStates.includes("annualReport"))
+  {
+    return post.properties.tags.includes("sub:report:annual")
+ }
+ if(reportStates.includes("interrimReport"))
+ {
+   return post.properties.tags.includes("sub:report:interim")
+}
+if(reportStates.includes("corporateInformation"))
+{
+  console.log("includes")
+  return post.properties.tags.includes("sub:ci")
+}
  
+ else return posts
+}
+ )
+
+
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       <h1 >Press releases</h1>
-      <h2>Filter:</h2>
-      <Radiobuttons categorie={categorie} setCategorie={setCategorie} />
-      <Checkbuttons report={report} setReport={setReport } />
-      <NewsItems newsItems={filteredPosts(posts)} />
+      <h4>Type:</h4>
+      <Radiobuttons category={category} setCategory={setCategory} />
+      <h4>Type of report:</h4>
+      <Checkbuttons reportStates={reportStates} setReportStates={setReportStates } />
+      <NewsItems newsItems={filteredPosts} />
     </div>
 
 

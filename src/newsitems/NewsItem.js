@@ -20,13 +20,13 @@ const NewsItem = ({ item }) => {
     return <div className="news-item">
          <div className="card">
             <div className="container">
-                    <h3>Title: 
+                    <h4>Title: 
                         <b> {item.content.title}</b>
-                    </h3>
-                    <h4>Author: {item.author.name} </h4>
-                    <h4>Tags: {translatedValidTags} 
                     </h4>
-                    <h4>Type: {item.properties.type}</h4>
+                    <h5>Author: {item.author.name} </h5>
+                    <h5>Tags: {translatedValidTags} 
+                    </h5>
+                    <h5>Type: {item.properties.type}</h5>
                     {!isClicked &&
                     <button className="button" onClick={toggleInformation}>
                           Read more

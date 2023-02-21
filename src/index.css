@@ -8,10 +8,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url("./assets/images/background.jpg"); */
+  font-family: Verdana, sans-serif 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Verdana, sans-serif;
 }
 
