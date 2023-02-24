@@ -1,5 +1,6 @@
 import NewsItem from "./NewsItem"
 
+//function that iterates over newsItems
 const NewsItems = ({ newsItems }) => {
     return (
         <div className="news-items">
