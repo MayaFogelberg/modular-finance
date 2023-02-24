@@ -1,3 +1,4 @@
+//Radio buttons that switches between IR, PR and Both modes
 const RadioButtons = ( {category, setCategory} ) => {
     const handleIR = () => {
       setCategory('ir');

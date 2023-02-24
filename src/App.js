@@ -15,6 +15,7 @@ function App() {
 
 
   useEffect(() => {
+    //fetch json objects and store them in posts
     fetch('https://feed.mfn.se/v1/feed/7c0dc3f4-0d57-4bea-ba07-94a9ff1f543f.json')
        .then((res) => res.json())
        .then((data) => {
@@ -26,6 +27,7 @@ function App() {
        });
  }, []);
  
+ //function that return filterd posts
  const filteredPosts = posts.filter((post) => {
   if (category === "Both") {
     return posts
@@ -48,7 +50,6 @@ function App() {
 }
 if(reportStates.includes("corporateInformation"))
 {
-  console.log("includes")
   return post.properties.tags.includes("sub:ci")
 }
  

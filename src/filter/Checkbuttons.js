@@ -1,3 +1,4 @@
+//Checkboxes that filters on regulatory, annual report, interrim report and Corporate Information
 const Checkboxs = ( {reportStates, setReportStates} ) => {      
 
     const handleSetReport = (report) => {

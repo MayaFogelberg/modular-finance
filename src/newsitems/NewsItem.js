@@ -1,6 +1,7 @@
 import "./newsitem.css"
 import { useState } from 'react';
 
+//function that creates a newsItem
 const NewsItem = ({ item }) => {
 
     const [isClicked, setIsClicked] = useState(false);
@@ -51,8 +52,8 @@ const NewsItem = ({ item }) => {
 
 export default NewsItem
 
-/* { <div dangerouslySetInnerHTML={{ __html: item.content.html}} /> } */
 
+//Maps the report to the word in item
 const tagTranslator = {
     ":regulatory": "Regulatory",
     "sub:report:annual": "Annual report",
